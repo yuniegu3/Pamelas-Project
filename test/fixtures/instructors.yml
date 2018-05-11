@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: 
+  lastname: 
+  age: 
+  salary: 
+  education: 
+  subject: MyString
+
+two:
+  firstname: 
+  lastname: 
+  age: 
+  salary: 
+  education: 
+  subject: MyString

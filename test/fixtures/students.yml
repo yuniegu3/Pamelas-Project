@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: 
+  lastname: 
+  age: 
+  education: 
+  cohort_id: 1
+
+two:
+  firstname: 
+  lastname: 
+  age: 
+  education: 
+  cohort_id: 1
