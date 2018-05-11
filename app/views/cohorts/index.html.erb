@@ -1,0 +1,11 @@
+<h1>Cohort index</h1>
+
+<% @cohorts.each do |cohort| %>
+<div>
+	<p>Name: <%= cohort.name %></p>
+	<p>Start Date: <%= cohort.start_date %></p>
+	<p>End Date: <%= cohort.end_date %></p>
+	<p>Instructor ID: <%= cohort.instructor_id %> </p>
+	<p>Course ID: <%= cohort.course_id %> </p>
+</div>
+<%end%>

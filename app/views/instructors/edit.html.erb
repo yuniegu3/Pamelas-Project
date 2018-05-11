@@ -1,0 +1,17 @@
+<%= form_for @instructor do |f| %>  
+    <%= f.label :firstname %>  
+    <%= f.text_field :firstname, value: @instructor.firstname %>  
+    <%= f.label :lastname %>  
+    <%= f.text_field :lastname, value: @instructor.lastname %>
+    <%= f.label :age %>  
+    <%= f.number_field :age, value: @instructor.age %> 
+    <%= f.label :salary %>  
+    <%= f.number_field :salary, value: @instructor.salary %> 
+    <%= f.label :education %>  
+    <%= f.text_field :education, value: @instructor.education %>  
+    <%= f.label :subject %>  
+    <%= f.text_field :subject, value: @instructor.subject %>
+    <%= f.submit %>
+<% end %>
+
+<% @error %>

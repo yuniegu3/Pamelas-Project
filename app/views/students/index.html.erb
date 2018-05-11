@@ -1,0 +1,11 @@
+<h1>Student index</h1>
+
+<% @students.each do |student| %>
+<div>
+	<p>First Name: <%= student.firstname %></p>
+	<p>Last Name: <%= student.lastname %></p>
+	<p>Age: <%= student.age %></p>
+	<p>Education: <%= student.education %></p>
+	<p>Cohort ID - Name: <%= student.cohort_id %></p>
+</div>
+<%end%>

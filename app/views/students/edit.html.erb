@@ -1,0 +1,16 @@
+<%= form_for @student do |f| %>  
+    <%= f.label :firstname %>  
+    <%= f.text_field :firstname, value: @student.firstname %>
+    <%= f.label :lastname %>  
+    <%= f.text_field :lastname, value: @student.lastname %> 
+    <%= f.label :age %>  
+    <%= f.number_field :age, value: @student.age %>  
+    <%= f.label :education %>  
+    <%= f.text_field :education, value: @student.education %>
+    <%# again, try to have it so that it is the name of cohort instead of id in a drop down menu%>
+    <%= f.label :cohort_id %>  
+    <%= f.number_field :cohort_id, value: @student.cohort_id%> 
+    <%= f.submit %>
+<% end %>
+
+<%= link_to 'Delete', student_path(@student), method: :delete %> 

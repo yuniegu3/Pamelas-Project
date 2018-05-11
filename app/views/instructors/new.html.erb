@@ -1,0 +1,19 @@
+<%= form_for @instructor do |f| %>  
+    <%= f.label :firstname %>  
+    <%= f.text_field :firstname %>  
+    <%= f.label :lastname %>  
+    <%= f.text_field :lastname %>
+    <%= f.label :age %>  
+    <%= f.number_field :age %> 
+    <%= f.label :salary %>  
+    <%= f.number_field :salary %> 
+    <%= f.label :education %>  
+    <%= f.text_field :education %>  
+    <%= f.label :subject %>  
+    <%= f.text_field :subject %>
+    <%# maybe make a drop down menu with cohort name instead of id %>
+    <%= f.submit %>
+<% end %>
+
+<% @error %>
+
