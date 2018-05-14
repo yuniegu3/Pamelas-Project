@@ -1,7 +1,17 @@
-<h1>Course Page</h1>
-
-<div>
-	<p>Name: <%= @course.name %></p>
-	<p>Location: <%= @course.location %></p>
-	<p>Total Hours: <%= @course.total_hours %></p>
-</div>
+<h1><%= @course.name %></h1>
+<table>
+   	<thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Location</th>
+            <th>Total Hours</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+           	<td><%= @course.name %></td>
+            <td><%= @course.location %></td>
+            <td><%= @course.total_hours %></td>
+        </tr>
+    </tbody>
+</table>

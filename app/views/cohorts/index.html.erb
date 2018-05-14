@@ -1,11 +1,41 @@
-<h1>Cohort index</h1>
+<h1>Cohorts List</h1>
 
+<p><a href="cohorts/new">Create Cohort</a></p>
+
+<table>
+   	<thead>
+        <tr>
+            <th>Cohort Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Instructor</th>
+            <th>Course</th>
+            <%# had to add empty <th> for visual purpose...the line would be shorter then td line.%>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
 <% @cohorts.each do |cohort| %>
-<div>
-	<p>Name: <%= cohort.name %></p>
-	<p>Start Date: <%= cohort.start_date %></p>
-	<p>End Date: <%= cohort.end_date %></p>
-	<p>Instructor ID: <%= cohort.instructor_id %> </p>
-	<p>Course ID: <%= cohort.course_id %> </p>
-</div>
-<%end%>
+        <tr>
+           	<td><a href="cohorts/<%= cohort.id %>"><%= cohort.name %></a></td>
+            <td><%= cohort.start_date %></td>
+            <td><%= cohort.end_date %></td>
+            <% if cohort.instructor_id != nil %>
+            <% fullname = Instructor.where(id: cohort.instructor_id).pluck(:lastname, :firstname)%>
+            <td><%= fullname.join(", ") %> </td>
+            <% else %>
+            <td> No Instructor Assigned</td>
+            <% end %>
+            <% if cohort.course_id != nil %>
+            <% course_name = Course.where(id: cohort.course_id).pluck(:name) %>
+            <td><%= course_name.join("") %></td>
+            <% else %>
+            <td> No Course Assigned </td>
+            <% end %>
+            <td><%= link_to 'Edit', edit_cohort_path(cohort) %></td>
+            <td><%= link_to 'Destroy', cohort_path(cohort), method: :delete, remote:true, data: { confirm: "Are you sure you want to delete #{cohort.name}?" } %></td>
+        </tr>
+<% end %>
+    </tbody>
+</table>

@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
 	before_action :authenticate_user!
 	#GET    /courses(.:format) courses#index
 	def index
-		@courses = Course.all
+		@courses = Course.all.order(name: :asc)
 	end
 	
 	#GET    /courses/:id(.:format) courses#show
@@ -19,6 +19,7 @@ class CoursesController < ApplicationController
 	#POST   /courses(.:format) courses#create
 	def create 
 		Course.create(course_params)
+		redirect_to '/courses'
 	end
 	
 	#GET    /courses/:id/edit(.:format) courses#edit

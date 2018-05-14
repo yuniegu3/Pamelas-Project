@@ -1,1 +1,8 @@
-<h1> Homepage </h1>
+
+<div class="centered">
+<% if user_signed_in? %>
+	<h1> Welcome! </h1>
+<% else %>
+	<h1> Please login </h1>
+<% end %>
+</div>

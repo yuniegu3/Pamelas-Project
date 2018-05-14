@@ -1,10 +1,32 @@
-<h1>Cohort Page</h1>
+<h1><%= @cohort.name %></h1>
 
-
-<div>
-	<p>Name: <%= @cohort.name %></p>
-	<p>Start Date: <%= @cohort.start_date %></p>
-	<p>End Date: <%= @cohort.end_date %></p>
-	<p>Instructor ID: <%= @cohort.instructor_id %> </p>
-	<p>Course ID: <%= @cohort.course_id %> </p>
-</div>
+<table>
+   	<thead>
+        <tr>
+            <th>Cohort Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Instructor</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+           	<td><%= @cohort.name %></td>
+            <td><%= @cohort.start_date %></td>
+            <td><%= @cohort.end_date %></td>
+            <% if @cohort.instructor_id != nil %>
+            <% fullname = Instructor.where(id: @cohort.instructor_id).pluck(:lastname, :firstname)%>
+            <td><%= fullname.join(", ") %> </td>
+            <% else %>
+            <td> No Instructor Assigned</td>
+            <% end %>
+            <% if @cohort.course_id != nil %>
+            <% course_name = Course.where(id: @cohort.course_id).pluck(:name) %>
+            <td><%= course_name.join("") %></td>
+            <% else %>
+            <td> No Course Assigned </td>
+            <% end %>
+        </tr>
+    </tbody>
+</table>

@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
 	before_action :authenticate_user!
 	# GET    /students(.:format)  students#index
 	def index
-		@students = Student.all
+		@students = Student.all.order(lastname: :asc)
 	end
 	
 	#GET    /students/:id(.:format)     students#show

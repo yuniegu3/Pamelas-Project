@@ -1,11 +1,26 @@
-<h1>Student index</h1>
+<h1>Student List</h1>
+<p><a href="students/new">Create Student</a></p>
 
+<table>
+   	<thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Education</th>
+            <th>Cohort</th>
+        </tr>
+    </thead>
+ <tbody>
 <% @students.each do |student| %>
-<div>
-	<p>First Name: <%= student.firstname %></p>
-	<p>Last Name: <%= student.lastname %></p>
-	<p>Age: <%= student.age %></p>
-	<p>Education: <%= student.education %></p>
-	<p>Cohort ID - Name: <%= student.cohort_id %></p>
-</div>
-<%end%>
+        <tr>
+           	<td><a href="students/<%= student.id %>"><%= student.lastname %>, <%= student.firstname %></td>
+            <td><%= student.age %></td>
+            <td><%= student.education %></td>
+            <td><%= student.cohort_id %></td>
+            <td><%= link_to 'Edit', edit_student_path(student) %></td>
+    		<td><%= link_to 'Destroy', student_path(student), method: :delete, remote:true, data: { confirm: "Are you sure you want to delete #{student.lastname},#{student.firstname}?" } %></td>
+        </tr>
+        <%end%>
+    </tbody>
+</table>
+

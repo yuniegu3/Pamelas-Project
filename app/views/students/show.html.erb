@@ -1,9 +1,27 @@
 
-<h1> Student Page </h1>
-<div>
-	<p>First Name: <%= @student.firstname %></p>
-	<p>Last Name: <%= @student.lastname %></p>
-	<p>Age: <%= @student.age %></p>
-	<p>Cohort ID - Name: <%= @student.cohort_id %></p>
+<h1> <%= @student.lastname %>, <%= @student.firstname %></h1>
 
-</div>
+
+<table>
+   	<thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Education</th>
+            <th>Cohort</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+           	<td><%= @student.lastname %>, <%= @student.firstname %></td>
+            <td><%= @student.age %></td>
+            <td><%= @student.education %></td>
+            <% if @student.cohort_id != nil %>
+            <% cohort_name = Cohort.where(id: @student.cohort_id).pluck(:name) %>
+            <td><%= cohort_name.join("") %></td>
+            <% else %>
+            <td> No Cohort Assigned </td>
+            <% end %>
+        </tr>
+    </tbody>
+</table>

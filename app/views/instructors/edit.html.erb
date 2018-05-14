@@ -6,12 +6,13 @@
     <%= f.label :age %>  
     <%= f.number_field :age, value: @instructor.age %> 
     <%= f.label :salary %>  
-    <%= f.number_field :salary, value: @instructor.salary %> 
+    <%= f.number_field :salary, value: @instructor.salary %>   
     <%= f.label :education %>  
-    <%= f.text_field :education, value: @instructor.education %>  
+    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {value: @instructor.education},{:class=>"browser-default"})%> 
     <%= f.label :subject %>  
     <%= f.text_field :subject, value: @instructor.subject %>
     <%= f.submit %>
 <% end %>
 
 <% @error %>
+

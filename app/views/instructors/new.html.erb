@@ -4,16 +4,18 @@
     <%= f.label :lastname %>  
     <%= f.text_field :lastname %>
     <%= f.label :age %>  
-    <%= f.number_field :age %> 
+    <%= f.number_field :age, min: '1', max: '149' %> 
     <%= f.label :salary %>  
-    <%= f.number_field :salary %> 
+    <%= f.number_field :salary, min: '1' %> 
     <%= f.label :education %>  
-    <%= f.text_field :education %>  
+    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {},{:class=>"browser-default"})%> 
     <%= f.label :subject %>  
     <%= f.text_field :subject %>
     <%# maybe make a drop down menu with cohort name instead of id %>
     <%= f.submit %>
 <% end %>
 
-<% @error %>
+
+
+
 

@@ -1,15 +1,17 @@
-<%= form_for @cohort do |f| %>  
+<%= form_for @cohort, remote: true do |f| %>  
     <%= f.label :name %>  
-    <%= f.text_field :name %>  
+    <%= f.text_field :name, required: true %>  
     <%= f.label :start_date %>  
-    <%= f.text_field :start_date %>
+    <%= f.text_field :start_date, required: true %>
     <%= f.label :end_date %>  
-    <%= f.text_field :end_date %> 
+    <%= f.text_field :end_date, required: true%> 
     <%= f.label :instructor_id %>  
-    <%= f.number_field :instructor_id %> 
+    <%= f.select(:instructor_id, Instructor.all.collect {|instructor| ["#{instructor.id}" + " " + instructor.lastname + ", " + instructor.firstname]}, { include_blank: true }, {:class=>"browser-default"}) %> 
     <%= f.label :course_id %>  
-    <%= f.number_field :course_id %> 
+    <%= f.select(:course_id, Course.all.collect {|course| ["#{course.id}" + " " + course.name]}, { include_blank: true }, {:class=>"browser-default"}) %> 
     <%= f.submit %>
 <% end %>
 
 <% @error %>
+
+

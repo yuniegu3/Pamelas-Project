@@ -1,9 +1,27 @@
-<h1> Instructor Page </h1>
-<div>
-	<p>First Name: <%= @instructor.firstname %></p>
-	<p>Last Name: <%= @instructor.lastname %></p>
-	<p>Age: <%= @instructor.age %></p>
-	<p>Salary: <%= @instructor.salary %></p>
-	<p>Education: <%= @instructor.education %></p>
-	<p>Subject: <%= @instructor.subject %></p>
-</div>
+<h1> <%= @instructor.lastname %>, <%= @instructor.firstname %> </h1>
+
+<table>
+   	<thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Education</th>
+            <th>Subject</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+           	<td><%= @instructor.lastname %>, <%= @instructor.firstname %></td>
+            <td><%= @instructor.age %></td>
+            <td><%= @instructor.salary %></td>
+            <td><%= @instructor.education %></td>
+            <td><%= @instructor.subject %></td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+
+

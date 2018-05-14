@@ -1,10 +1,31 @@
-<h1>Course index</h1>
+<h1>Course List</h1>
+<p><a href="courses/new">Create Course</a></p>
 
-<% @courses.each do |course| %>
-<div>
-	<p>Name: <%= course.name %></p>
-	<p>Location: <%= course.location %></p>
-	<p>Total Hours: <%= course.total_hours %></p>
 
-</div>
-<%end%>
+
+<table>
+   	<thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Location</th>
+            <th>Total Hour</th>
+            <%# had to add empty <th> for visual purpose...the line would be shorter then td line.%>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+   <tbody>
+	<% @courses.each do |course| %>
+<tr>
+	<td><a href="courses/<%= course.id %>"> <%= course.name %></a></td>
+	<td> <%= course.location %></td>
+	<td><%= course.total_hours %> hours </td>
+    <td><%= link_to 'Edit', edit_course_path(course) %></td>
+    <td><%= link_to 'Destroy', course_path(course), method: :delete, remote:true, data: { confirm: "Are you sure you want to delete #{course.name}?" } %></td>
+</tr>
+	<% end %>
+	</tbody>
+</table>
+
+
+

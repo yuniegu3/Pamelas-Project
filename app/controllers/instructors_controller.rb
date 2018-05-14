@@ -3,7 +3,7 @@ class InstructorsController < ApplicationController
 	before_action :authenticate_user!
 	#GET    /instructors(.:format)   instructors#index
 	def index
-		@instructors = Instructor.all
+		@instructors = Instructor.all.order(lastname: :asc)
 	end
 
 	#GET    /instructors/:id(.:format)   instructors#show
@@ -19,7 +19,10 @@ class InstructorsController < ApplicationController
 	#POST   /instructors(.:format)   instructors#create
 	def create 
 		Instructor.create(instructor_params)
+		redirect_to '/instructors'
 	end
+
+
 
 	#GET    /instructors/:id/edit(.:format)   instructors#edit
 	def edit 
@@ -33,6 +36,7 @@ class InstructorsController < ApplicationController
         @instructor.update(instructor_params)
         redirect_to '/instructors'
 	end
+
 	
 	#DELETE /instructors/:id(.:format)    instructors#destroy
 	def destroy

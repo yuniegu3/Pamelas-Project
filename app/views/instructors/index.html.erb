@@ -1,12 +1,37 @@
-<h1>Instructor index</h1>
+<h1>Instructor List</h1>
 
+<p><a href="instructors/new">Create Instructor</a></p>
+
+
+<table>
+   	<thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Education</th>
+            <th>Subject</th>
+            <%# had to add empty <th> for visual purpose...the line would be shorter then td line.%>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+   <tbody>
 <% @instructors.each do |instructor| %>
-<div>
-	<p>First Name: <%= instructor.firstname %></p>
-	<p>Last Name: <%= instructor.lastname %></p>
-	<p>Age: <%= instructor.age %></p>
-	<p>Salary: <%= instructor.salary %></p>
-	<p>Education: <%= instructor.education %></p>
-	<p>Subject: <%= instructor.subject %></p>
-</div>
-<%end%>
+<tr>
+	<td><a href="instructors/<%= instructor.id %>"> <%= instructor.lastname %>, <%= instructor.firstname %></a></td>
+	<td><%= instructor.age %></td>
+	<td><%= instructor.salary %></td>
+	<td><%= instructor.education %></td>
+	<td><%= instructor.subject %></td>
+	<td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
+    <td><%= link_to 'Destroy', instructor_path(instructor), method: :delete, remote:true, data: { confirm: "Are you sure you want to delete #{instructor.lastname},#{instructor.firstname}?" } %></td>
+</tr>
+<% end %>
+	</tbody>
+</table>
+
+
+
+
+
