@@ -30,3 +30,23 @@
         </tr>
     </tbody>
 </table>
+
+<table>
+    <thead>
+        <tr>
+            <th>Students Attending <%= @cohort.name %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if @students != nil %>
+        <% @students.each do |student| %>
+        <tr>
+            <td><a href="/students/<%= student.id %>"><%= student.lastname %>, <%= student.firstname %></a></td> 
+            <% end %>
+        <% else %> 
+            <td> No Students Assigned to this Cohort </td>
+            <% end %>
+        </tr>
+          
+    </tbody>
+</table>

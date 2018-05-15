@@ -10,6 +10,8 @@ class CohortsController < ApplicationController
 	#GET    /cohorts/:id(.:format) cohorts#show
 	def show
 		@cohort = Cohort.find(params[:id])
+		@students = Student.where(cohort_id: params[:id])
+		puts @students
 	end
 	
 	#GET   /cohorts/new(.:format) cohorts#new

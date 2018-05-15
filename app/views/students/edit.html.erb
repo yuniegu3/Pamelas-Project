@@ -6,10 +6,9 @@
     <%= f.label :age %>  
     <%= f.number_field :age, value: @student.age %>  
     <%= f.label :education %>  
-    <%= f.text_field :education, value: @student.education %>
-    <%# again, try to have it so that it is the name of cohort instead of id in a drop down menu%>
+    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {value: @student.education},{:class=>"browser-default"})%> 
     <%= f.label :cohort_id %>  
-    <%= f.number_field :cohort_id, value: @student.cohort_id%> 
+    <%= f.select(:cohort_id, Cohort.all.collect {|cohort| ["#{cohort.id}" + " " + cohort.name]}, {value: @student.cohort_id}, {:class=>"browser-default"}) %> 
     <%= f.submit %>
 <% end %>
 
