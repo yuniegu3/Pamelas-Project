@@ -7,7 +7,7 @@
     <%= f.label :age %>  
     <%= f.number_field :age, min: '1', max: '149',:class => "form-control" %> 
     <%= f.label :salary %>  
-    <%= f.number_field :salary, min: '1',:class => "form-control" %> 
+    <%= f.number_field :salary, min: '1', max: '99999999' :class => "form-control" %> 
     <%= f.label :education %>  
     <%= f.select(:education, ["Highschool","College","Masters","PHD"], {include_blank: true},{:class=>"browser-default form-control"})%> 
     <%= f.label :subject %>  

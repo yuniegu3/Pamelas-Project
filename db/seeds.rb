@@ -19,3 +19,5 @@
 # 	Student.create(firstname:'Test3', lastname:'Student Test', age:19, education:'Highschool', cohort_id:2)
 # 	Student.create(firstname:'Test5', lastname:'Student Test', age:17, education:'Highschool', cohort_id:1)
 # 	Student.create(firstname:'Test6', lastname:'Student Test', age:18, education:'Highschool', cohort_id:1)
+
+

@@ -5,7 +5,7 @@
     <%= f.label :lastname %>  
     <%= f.text_field :lastname, value: @student.lastname,:class => "form-control" %> 
     <%= f.label :age %>  
-    <%= f.number_field :age, value: @student.age,:class => "form-control" %>  
+    <%= f.number_field :age , min: '1', max: '149', value: @student.age,:class => "form-control" %>  
     <%= f.label :education %>  
     <%= f.select(:education, ["Highschool","College","Masters","PHD"], {value: @student.education},{:class=>"browser-default form-control"})%> 
     <%= f.label :cohort_id %>  
