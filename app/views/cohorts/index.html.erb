@@ -1,8 +1,9 @@
+<div class="container">
 <h1>Cohorts List</h1>
 
 <p><a href="cohorts/new">Create Cohort</a></p>
 
-<table>
+<table class="table table-hover">
    	<thead>
         <tr>
             <th>Cohort Name</th>
@@ -34,8 +35,9 @@
             <td> No Course Assigned </td>
             <% end %>
             <td><%= link_to 'Edit', edit_cohort_path(cohort) %></td>
-            <td><%= link_to 'Destroy', cohort_path(cohort), method: :delete, remote:true, data: { confirm: "Are you sure you want to delete #{cohort.name}?" } %></td>
+            <td id="cohort-<%= cohort.id %>"><%= link_to 'Destroy', cohort_path(cohort), method: :delete, remote:true, data: { confirm: "Are you sure you want to delete #{cohort.name}?" } %></td>
         </tr>
 <% end %>
     </tbody>
 </table>
+</div>

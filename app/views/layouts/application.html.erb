@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
   <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Pamelas Project</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,36 +11,43 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
   </head>
 
   <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo">Pamela's Pannel</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Pamela's Pannel</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/courses">Courses</a></li>
+      <li><a href="/cohorts">Cohorts</a></li>
+      <li><a href="/instructors">Instructors</a></li>
+      <li><a href="/students">Students</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <li>
-          <%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
+          <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
         </li>
         <% else %>
-        <li>
-          <%= link_to('Login', new_user_session_path)  %>
-        </li>
+           <li><%= link_to('Login', new_user_session_path)  %>
+          </li>
         <% end %>
-        <li><a href="/students">Students</a></li>
-        <li><a href="/courses">Courses </a></li>
-        <li><a href="/instructors">Instructors</a></li>
-        <li><a href="/cohorts">Cohorts</a></li>
-      </ul>
-    </div>
-  </nav>
-      <p class="alert"><%= alert %></p>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<p class="alert text-danger"><%= alert %></p>
+
     <%= yield %>
 
+
+
     <!-- jQuery -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>

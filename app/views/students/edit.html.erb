@@ -1,15 +1,17 @@
+<div class="container">
 <%= form_for @student do |f| %>  
     <%= f.label :firstname %>  
-    <%= f.text_field :firstname, value: @student.firstname %>
+    <%= f.text_field :firstname, value: @student.firstname,:class => "form-control" %>
     <%= f.label :lastname %>  
-    <%= f.text_field :lastname, value: @student.lastname %> 
+    <%= f.text_field :lastname, value: @student.lastname,:class => "form-control" %> 
     <%= f.label :age %>  
-    <%= f.number_field :age, value: @student.age %>  
+    <%= f.number_field :age, value: @student.age,:class => "form-control" %>  
     <%= f.label :education %>  
-    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {value: @student.education},{:class=>"browser-default"})%> 
+    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {value: @student.education},{:class=>"browser-default form-control"})%> 
     <%= f.label :cohort_id %>  
-    <%= f.select(:cohort_id, Cohort.all.collect {|cohort| ["#{cohort.id}" + " " + cohort.name]}, {value: @student.cohort_id}, {:class=>"browser-default"}) %> 
-    <%= f.submit %>
+    <%= f.select(:cohort_id, Cohort.all.collect {|cohort| ["#{cohort.id}" + " " + cohort.name]}, {value: @student.cohort_id }, {:class=>"browser-default form-control"}) %> 
+    <%= f.submit :class => "btn btn-primary" %>
 <% end %>
 
-<%= link_to 'Delete', student_path(@student), method: :delete %> 
+<p><a href="/students"> Cancel </a></p>
+</div>

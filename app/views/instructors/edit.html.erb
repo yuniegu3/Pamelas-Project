@@ -1,18 +1,19 @@
+<div class="container">
 <%= form_for @instructor do |f| %>  
     <%= f.label :firstname %>  
-    <%= f.text_field :firstname, value: @instructor.firstname %>  
+    <%= f.text_field :firstname, value: @instructor.firstname,:class => "form-control" %>  
     <%= f.label :lastname %>  
-    <%= f.text_field :lastname, value: @instructor.lastname %>
+    <%= f.text_field :lastname, value: @instructor.lastname,:class => "form-control" %>
     <%= f.label :age %>  
-    <%= f.number_field :age, value: @instructor.age %> 
+    <%= f.number_field :age, value: @instructor.age,:class => "form-control" %> 
     <%= f.label :salary %>  
-    <%= f.number_field :salary, value: @instructor.salary %>   
+    <%= f.number_field :salary, value: @instructor.salary,:class => "form-control" %>   
     <%= f.label :education %>  
-    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {value: @instructor.education},{:class=>"browser-default"})%> 
+    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {value: @instructor.education},{:class=>"browser-default form-control"})%> 
     <%= f.label :subject %>  
-    <%= f.text_field :subject, value: @instructor.subject %>
-    <%= f.submit %>
+    <%= f.text_field :subject, value: @instructor.subject,:class => "form-control" %>
+    <%= f.submit :class => "btn btn-primary" %>
 <% end %>
-
-<% @error %>
+<p><a href="/instructors"> Cancel </a></p>
+</div>
 

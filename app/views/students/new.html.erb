@@ -1,16 +1,32 @@
-<%= form_for @student do |f| %>  
-    <%= f.label :firstname %>  
-    <%= f.text_field :firstname %>  
-    <%= f.label :lastname %>  
-    <%= f.text_field :lastname %>
-    <%= f.label :age %>  
-    <%= f.number_field :age %> 
-    <%= f.label :education %>  
-    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {value: @student.education},{:class=>"browser-default"})%> 
-    <%= f.label :cohort_id %>  
-    <%= f.select(:cohort_id, Cohort.all.collect {|cohort| ["#{cohort.id}" + " " + cohort.name]}, {value: @student.cohort_id}, {:class=>"browser-default"}) %> 
-    <%# maybe make a drop down menu with cohort name instead of id %>
-    <%= f.submit %>
-<% end %>
+<div class="container">
+<%= form_for @student do |f| %> 
 
-<% @error %>
+    <%= f.label :firstname %>  
+    <%= f.text_field :firstname,:class => "form-control" %> 
+
+
+    <%= f.label :lastname %>  
+    <%= f.text_field :lastname,:class => "form-control" %>
+
+    <%= f.label :age %>  
+    <%= f.number_field :age,:class => "form-control" %>
+
+
+    <%= f.label :education %>  
+    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {include_blank: true},{:class=>"browser-default form-control"})%> 
+
+
+    <%= f.label :cohort_id %>  
+    <%= f.select(:cohort_id, Cohort.all.collect {|cohort| ["#{cohort.id}" + " " + cohort.name]}, {include_blank: true}, {:class=>"browser-default form-control"}) %> 
+    <%# maybe make a drop down menu with cohort name instead of id %>
+
+
+    <%= f.submit :class => "btn btn-primary" %>
+
+<% end %>
+<p><a href="/students"> Cancel </a></p>
+
+</div>
+
+
+

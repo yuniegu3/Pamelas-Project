@@ -1,20 +1,22 @@
+<div class="container">
 <%= form_for @instructor do |f| %>  
     <%= f.label :firstname %>  
-    <%= f.text_field :firstname %>  
+    <%= f.text_field :firstname,:class => "form-control" %>  
     <%= f.label :lastname %>  
-    <%= f.text_field :lastname %>
+    <%= f.text_field :lastname,:class => "form-control" %>
     <%= f.label :age %>  
-    <%= f.number_field :age, min: '1', max: '149' %> 
+    <%= f.number_field :age, min: '1', max: '149',:class => "form-control" %> 
     <%= f.label :salary %>  
-    <%= f.number_field :salary, min: '1' %> 
+    <%= f.number_field :salary, min: '1',:class => "form-control" %> 
     <%= f.label :education %>  
-    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {},{:class=>"browser-default"})%> 
+    <%= f.select(:education, ["Highschool","College","Masters","PHD"], {include_blank: true},{:class=>"browser-default form-control"})%> 
     <%= f.label :subject %>  
-    <%= f.text_field :subject %>
+    <%= f.text_field :subject,:class => "form-control" %>
     <%# maybe make a drop down menu with cohort name instead of id %>
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary"%>
 <% end %>
-
+<p><a href="/instructors"> Cancel </a></p>
+</div>
 
 
 

@@ -1,6 +1,7 @@
+<div class="container-fluid">
 <h1><%= @cohort.name %></h1>
 
-<table>
+<table class="table table-bordered">
    	<thead>
         <tr>
             <th>Cohort Name</th>
@@ -31,7 +32,7 @@
     </tbody>
 </table>
 
-<table>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Students Attending <%= @cohort.name %></th>
@@ -50,3 +51,5 @@
           
     </tbody>
 </table>
+<p><a href="/cohorts"> Back </a></p>
+</div>

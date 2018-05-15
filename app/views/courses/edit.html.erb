@@ -1,9 +1,12 @@
+<div class="container">
 <%= form_for @course do |f| %>  
     <%= f.label :name %>  
-    <%= f.text_field :name, value: @course.name %>  
+    <%= f.text_field :name, value: @course.name,:class => "form-control" %>  
     <%= f.label :location %>  
-    <%= f.text_field :location, value: @course.location %>
+    <%= f.text_field :location, value: @course.location,:class => "form-control" %>
     <%= f.label :total_hours %>  
-    <%= f.number_field :total_hours, value: @course.total_hours %> 
-    <%= f.submit %>
+    <%= f.number_field :total_hours, value: @course.total_hours,:class => "form-control" %> 
+    <%= f.submit :class => "btn btn-primary" %>
 <% end %>
+<p><a href="/courses"> Cancel </a></p>
+</div>

@@ -1,9 +1,10 @@
+<div class="container">
 <h1>Course List</h1>
 <p><a href="courses/new">Create Course</a></p>
 
 
 
-<table>
+<table class="table table-hover">
    	<thead>
         <tr>
             <th>Course Name</th>
@@ -21,11 +22,11 @@
 	<td> <%= course.location %></td>
 	<td><%= course.total_hours %> hours </td>
     <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course_path(course), method: :delete, remote:true, data: { confirm: "Are you sure you want to delete #{course.name}?" } %></td>
+    <td id="course-<%= course.id %>"><%= link_to 'Destroy', course_path(course), method: :delete, remote:true, data: { confirm: "Are you sure you want to delete #{course.name}?" } %></td>
 </tr>
 	<% end %>
 	</tbody>
 </table>
-
+</div>
 
 
