@@ -10,7 +10,7 @@
     <%# can not seem to make value to select @cohort.instructor_id %>
     <%= f.select(:instructor_id, Instructor.all.collect {|instructor| ["#{instructor.id}" + " " + instructor.lastname + ", " + instructor.firstname]}, {value: @cohort.instructor_id}, {:class=>"browser-default form-control"})  %> 
     <%= f.label :course_id %>  
-    <%= f.select(:course_id, Course.all.collect {|course| ["#{course.id}" + " " + course.name]}, {value: @cohort.course_id}, {:class=>"browser-default form-control"}) %> 
+    <%= f.select(:course_id, Course.all.collect {|course| [course.name]}, {value: @cohort.course_id}, {:class=>"browser-default form-control"}) %> 
     <%= f.submit :class => "btn btn-primary"%>
 <% end %>
 

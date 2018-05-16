@@ -12,6 +12,7 @@
         </tr>
     </thead>
  <tbody>
+
 <% @students.each do |student| %>
         <tr>
            	<td><a href="students/<%= student.id %>"><%= student.lastname %>, <%= student.firstname %></td>

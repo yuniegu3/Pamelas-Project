@@ -9,7 +9,7 @@
     <%= f.label :instructor_id %>  
     <%= f.select(:instructor_id, Instructor.all.collect {|instructor| ["#{instructor.id}" + " " + instructor.lastname + ", " + instructor.firstname]}, { include_blank: true }, {:class=>"browser-default form-control"}) %> 
     <%= f.label :course_id %>  
-    <%= f.select(:course_id, Course.all.collect {|course| ["#{course.id}" + " " + course.name]}, { include_blank: true }, {:class=>"browser-default form-control"}) %> 
+    <%= f.select(:course_id, Course.all.collect {|course| [course.name]}, { include_blank: true }, {:class=>"browser-default form-control"}) %> 
     <%= f.submit :class => "btn btn-primary" %>
 <% end %>
 <p><a href="/cohorts"> Cancel </a></p>

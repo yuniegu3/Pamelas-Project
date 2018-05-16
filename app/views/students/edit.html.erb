@@ -9,7 +9,7 @@
     <%= f.label :education %>  
     <%= f.select(:education, ["Highschool","College","Masters","PHD"], {value: @student.education},{:class=>"browser-default form-control"})%> 
     <%= f.label :cohort_id %>  
-    <%= f.select(:cohort_id, Cohort.all.collect {|cohort| ["#{cohort.id}" + " " + cohort.name]}, {value: @student.cohort_id }, {:class=>"browser-default form-control"}) %> 
+    <%= f.select(:cohort_id, Cohort.all.collect {|cohort| [cohort.name]}, {value: @student.cohort_id }, {:class=>"browser-default form-control"}) %> 
     <%= f.submit :class => "btn btn-primary" %>
 <% end %>
 
