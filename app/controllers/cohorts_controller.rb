@@ -17,6 +17,7 @@ class CohortsController < ApplicationController
 	#GET   /cohorts/new(.:format) cohorts#new
 	def new
 		@cohort = Cohort.new
+		
 	end
 	
 	#POST   /cohorts(.:format) cohorts#create
