@@ -1,4 +1,4 @@
-qclass CohortsController < ApplicationController
+class CohortsController < ApplicationController
 
 	before_action :authenticate_user!
 
