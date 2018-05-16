@@ -17,7 +17,7 @@
 
 
     <%= f.label :cohort_id %>  
-    <%= f.select(:cohort_id, Cohort.all.collect {|cohort| [cohort.name]}, {include_blank: true}, {:class=>"browser-default form-control"}) %> 
+    <%= f.select(:cohort_id, Cohort.all.collect {|cohort| [cohort.id + " " + cohort.name]}, {include_blank: true}, {:class=>"browser-default form-control"}) %> 
     <%# maybe make a drop down menu with cohort name instead of id %>
 
 
