@@ -10,5 +10,6 @@ Post MVP, have 3 different usertypes and limitation according to the user type.
 Sign in info:
 
 Email: Admin@example.com
+
 Password: 123456
 
