@@ -22,7 +22,7 @@
 <tr>
 	<td><a href="instructors/<%= instructor.id %>"> <%= instructor.lastname %>, <%= instructor.firstname %></a></td>
 	<td><%= instructor.age %></td>
-	<td><%= instructor.salary %></td>
+	<td>$ <%= instructor.salary %></td>
 	<td><%= instructor.education %></td>
 	<td><%= instructor.subject %></td>
 	<td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>

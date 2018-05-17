@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A fullstack website that works as a wordpress admin panel for a school.
+User is able to create students, cohorts, instructors, and courses.
+User may also add instructors/students to a cohort. Cohort belongs to a course.
 
-Things you may want to cover:
+For now, there is no limitation for users. All users are created as admin.
+Post MVP, have 3 different usertypes and limitation according to the user type.
 
-* Ruby version
+Sign in info:
 
-* System dependencies
+Email: Admin@example.com
+Password: 123456
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
