@@ -8,6 +8,7 @@ Admin/User may also add instructors/students to a cohort, and cohort to a course
 The app is made in a way, where a Admin/User can easily keep track of which student is inside a cohort by going inside the cohort's page then clicking on the named link to bring up all students attending the cohort.
 ![students](https://user-images.githubusercontent.com/36908534/40382600-c72c30c2-5dcc-11e8-8271-c4bf5c7a5929.png)
 
+![pamelasproject](https://user-images.githubusercontent.com/36908534/40856389-b38f18be-65a5-11e8-83c9-504c419bbeee.gif)
 For now, there is no limitation for users. All users are created as admin.
 Post MVP, have 3 different usertypes and limitation according to the user type.
 
